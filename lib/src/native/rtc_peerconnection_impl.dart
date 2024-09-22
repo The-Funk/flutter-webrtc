@@ -432,8 +432,9 @@ class RTCPeerConnectionNative extends RTCPeerConnection {
       String type = response['type'];
       return RTCSessionDescription(sdp, type);
     } on PlatformException catch (e) {
-      throw 'Unable to RTCPeerConnection::getRemoteDescription: ${e.message}';
+      print('Unable to RTCPeerConnection::getRemoteDescription: ${e.message}');
     }
+    return RTCSessionDescription(null, null);
   }
 
   @override
